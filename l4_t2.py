@@ -9,16 +9,21 @@ import string
 
 file=open("mybook.txt")
 
-count=0
+#count=0
 hist = dict()
 for line in file:
     line = line.split()
     for word in line:
         word = word.strip(string.punctuation+string.whitespace).lower()
-        count +=1
+        #count +=1
         hist[word] = hist.get(word,0)+1
 
-        print(word)
+       # print(word)
 print("Total number ofwords are %d" % sum(hist.values()))
-print(count)
+#print(count)
+
+print("Total number of different words are %d" % len(hist))
+
+for key,value in hist.items():
+    print(key,value)
 

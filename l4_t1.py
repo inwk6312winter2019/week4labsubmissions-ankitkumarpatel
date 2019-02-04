@@ -8,5 +8,5 @@ file=open("mybook.txt")
 for line in file:
     line = line.split()
     for word in line:
-        word = word.strip(string.punctuation+string.whitespace)
+        word = word.strip(string.punctuation+string.whitespace).lower()
         print(word)   

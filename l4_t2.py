@@ -19,11 +19,11 @@ for line in file:
         hist[word] = hist.get(word,0)+1
 
        # print(word)
-print("Total number ofwords are %d" % sum(hist.values()))
+print("Total number of words are %d" % sum(hist.values()))
 #print(count)
 
 print("Total number of different words are %d" % len(hist))
 
 for key,value in hist.items():
-    print(key,value)
+    print(key,value,sep ='\t')
 

@@ -30,8 +30,8 @@ def difference(t,w):
     print(set_t)
     print("\n\nword set:")
     print(set_w)
-    print("\nprinting all the words in the book that are not in the word list:")
-    print("\ndifference set:")
+    print("printing all the words in the book that are not in the word list:")
+    print("difference set:")
     print(set_diff)
 
 

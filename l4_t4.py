@@ -4,3 +4,38 @@ Python provides a data structure called set that provides many common set operat
 
 """
 
+
+import string
+
+
+hist = dict()
+lst = []
+
+
+def histogram(filename):
+    file = open(filename)
+    for line in filename:
+        line = line.split()
+        for word in line:
+            word = word.strip(string.punctuation+string.whitespace).lower()
+            hist[word] = hist.get(word,0)+1
+    return(hist)
+
+def difference(t,w):
+    set_t = set(t)
+    set_w = set(w)
+    set_diff = set_t.difference(set_w)
+    f"printing all the words in the book that are not in the word list:"
+    print(set_t)
+    print(set_w)
+    print(set_diff)
+
+
+
+text_histo = histogram("mybook.txt")
+word_histo = histogram("words.txt")
+print(text_histo)
+print(word_histo)
+difference(text_histo,word_histo)
+
+

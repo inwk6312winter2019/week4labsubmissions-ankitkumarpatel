@@ -10,3 +10,28 @@ Write a program that reads a text from a file, counts word frequencies, and prin
 To make the plots, you might have to install matplotlib
 
 """
+
+
+import string
+
+
+hist = dict()
+lst = []
+def depunctuate(line):
+    for punc in string.punctuation:
+        line = line.replace(punc, " ")
+
+def histogram(filename):
+    file = open(filename)
+    for line in file:
+        depunctuate(line)
+        line = line.split()
+        for word in line:
+            word = word.strip(string.punctuation+string.whitespace).lower()
+            hist[word] = hist.get(word,0)+1
+    return(hist)
+
+hist = histogram("mybook.txt")
+lst = [(value,key)for key,value in sorted(hist.items())]
+print(lst)
+

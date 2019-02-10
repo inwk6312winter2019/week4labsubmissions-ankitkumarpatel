@@ -13,10 +13,10 @@ To make the plots, you might have to install matplotlib
 
 
 import string
-
+import matplotlib.pyplot as pyplot
 
 hist = dict()
-lst = []
+
 def depunctuate(line):
     for punc in string.punctuation:
         line = line.replace(punc, " ")
@@ -31,7 +31,24 @@ def histogram(filename):
             hist[word] = hist.get(word,0)+1
     return(hist)
 
-hist = histogram("mybook.txt")
-lst = [(value,key)for key,value in sorted(hist.items())]
-print(lst)
+histogram("mybook.txt")
+lst = [(value,key)for key,value in hist.items()]
+lst.sort(reverse=True)
+lst.sort(reverse=True)
+rank_freq = [(rank,freq) for rank,freq in enumerate(lst, start=1)]
+
+pyplot.clf()
+pyplot.xscale("log")
+pyplot.yscale("log")
+pyplot.title("Zipf's Graph")
+pyplot.xlabel("Rank")
+pyplot.ylabel("Frequency")
+
+
+for rank,freq in rank_freq:
+
+    pyplot.plot(rank,freq,"-r")
+
+pyplot.show()
+
 

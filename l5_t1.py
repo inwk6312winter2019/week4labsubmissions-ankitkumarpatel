@@ -16,7 +16,7 @@ class Point():
 
 def distance(p,q):
     distance = sqrt((p.x-q.x)**2+(p.y-q.y)**2)
-    return(f"distance between given two points is {distance}.")
+    return(f"distance between given two points is {distance}.")                     # use of f strings
 
 
 x = int(input("Enter x coordinate of point a: "))

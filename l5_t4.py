@@ -43,5 +43,5 @@ time2 = Time()
 time2.hour = 14
 time2.minute = 45
 time2.second = 20
-print()
+
 print(f"time1 is after time2 :{time1.is_after(time2)}")

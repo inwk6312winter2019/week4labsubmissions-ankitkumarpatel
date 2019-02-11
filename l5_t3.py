@@ -14,7 +14,7 @@ class Time:
 
 def print_time(t):
 
-    print('%.2d:%.2d:%.2d'.format(t.hour, t.minute, t.second))
+    print(('{0:02d}:{1:02d}:{2:02d}').format(t.hour, t.minute, t.second))
 
-time = Time(10,10,10)
+time = Time(20,8,9)
 print_time(time)

@@ -6,6 +6,7 @@ Create a new class called Rectangle, this class will have width, height and corn
 •	Write a version of move_rectangle that creates and returns a new Rectangle instead of modifying the old one.
 
 """
+import copy
 
 class Point():
     def __init__(self,x=0,y=0):
@@ -33,10 +34,20 @@ def move_rectangle(rect,dx,dy):
     rect.center.y += dy
     return (rect)
 
+def move_rectangle_improved(rect,dx,dy):
+    rect2 = copy.deepcopy(rect)
+    rect2.corner.x += dx
+    rect2.corner.y += dy
+    rect2.center.x += dx
+    rect2.center.y += dy
+    return (rect2)
 
 box = Rectangle(100,200)
 find_center(box)
 print(f"x of center= {box.center.x}, y of center= {box.center.y}")
-move_rectangle(box,10,10)
+box2 = move_rectangle_improved(box,10,10)
 print("after moving rectangle updated parameters are:")
+print(f"x of corner = {box2.corner.x}, y of corner = {box2.corner.y}, x of center = {box2.center.x}, y of center ={box2.center.y}")
+
+print("original rectangle parameters are:")
 print(f"x of corner = {box.corner.x}, y of corner = {box.corner.y}, x of center = {box.center.x}, y of center ={box.center.y}")

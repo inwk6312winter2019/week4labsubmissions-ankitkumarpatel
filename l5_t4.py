@@ -5,7 +5,7 @@ Write a boolean function called is_after that takes two Time objects, t1 and t2,
 """
 
 class Time:
-    def __init__(self,hour,minute,second):
+    def __init__(self,hour=0,minute=0,second=0):
         self.hour = hour
         self.minute = minute
         self.second = second
@@ -13,25 +13,25 @@ class Time:
     def is_after(self, other):
         return self.time_to_int() > other.time_to_int()
 
+    def time_to_int(time):
+        minutes = time.hour * 60 + time.minute
+        seconds = minutes * 60 + time.second
+        return seconds
+
+    def int_to_time(seconds):
+        time = Time()
+        minutes, time.second = divmod(seconds, 60)
+        time.hour, time.minute = divmod(minutes, 60)
+        return time
+
+    def add_time(t1, t2):
+        seconds = time_to_int(t1) + time_to_int(t2)
+        return int_to_time(seconds)
+
+
 def print_time(t):
 
     print(('{0:02d}:{1:02d}:{2:02d}').format(t.hour, t.minute, t.second))
-
-
-def time_to_int(time):
-    minutes = time.hour * 60 + time.minute
-    seconds = minutes * 60 + time.second
-    return seconds
-
-def int_to_time(seconds):
-    time = Time()
-    minutes, time.second = divmod(seconds, 60)
-    time.hour, time.minute = divmod(minutes, 60)
-    return time
-
-def add_time(t1, t2):
-    seconds = time_to_int(t1) + time_to_int(t2)
-    return int_to_time(seconds)
 
 
 time1 = Time()
@@ -43,3 +43,5 @@ time2 = Time()
 time2.hour = 14
 time2.minute = 45
 time2.second = 20
+print()
+print(f"time1 is after time2 :{time1.is_after(time2)}")

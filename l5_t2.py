@@ -6,3 +6,19 @@ Create a new class called Rectangle, this class will have width, height and corn
 •	Write a version of move_rectangle that creates and returns a new Rectangle instead of modifying the old one.
 
 """
+
+class Point():
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+class Rectangle():
+    def __init__(self,height,width,corner = Point(0,0)):
+        self.height = height
+        self.width = width
+        self.corner = corner
+
+def find_center():
+
+def mov_rectangle():
+    

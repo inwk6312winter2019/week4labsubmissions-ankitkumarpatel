@@ -24,11 +24,18 @@ def find_center(rect):
     c.x = rect.corner.x + rect.width/2
     c.y = rect.corner.y + rect.height/2
     rect.center = Point(c.x,c.y)
-    return(rect)
+    return (rect)
 
-def mov_rectangle():
-    pass
+def move_rectangle(rect,dx,dy):
+    rect.corner.x += dx
+    rect.corner.y += dy
+    rect.center.x += dx
+    rect.center.y += dy
+    return (rect)
+
 
 box = Rectangle(100,200)
 find_center(box)
 print(f"x of center= {box.center.x}, y of center= {box.center.y}")
+move_rectangle(box,10,10)
+print(f"x of corner = {box.corner.x}, y of corner = {box.corner.y}, x of center = {box.center.x}, y of center ={box.center.y}")

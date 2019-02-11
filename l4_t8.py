@@ -9,12 +9,9 @@ In a large collection of MP3 files, there may be more than one copy of the same 
 import os
 
 os.chdir("/home/student/week4labsubmissions-ankitkumarpatel")
-
+mp3_list = []
 for root,dirs,files in os.walk(".",topdown = False):
 
     for name in files:
-        print(os.path.join(root,name))
-
-
-    for name in dirs:
-        print(os.path.join(root,name))
+        if name[-4:] = ".mp3":
+        mp3_list.append((os.path.join(root,name)))

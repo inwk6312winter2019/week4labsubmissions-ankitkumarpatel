@@ -8,17 +8,27 @@ Create a new class called Rectangle, this class will have width, height and corn
 """
 
 class Point():
-    def __init__(self,x,y):
+    def __init__(self,x=0,y=0):
         self.x = x
         self.y = y
 
 class Rectangle():
-    def __init__(self,height,width,corner = Point(0,0)):
+    def __init__(self,width,height,corner = Point(0,0),center= Point(0,0)):
         self.height = height
         self.width = width
         self.corner = corner
+        self.center = center
 
-def find_center():
+def find_center(rect):
+    c = Point()
+    c.x = rect.corner.x + rect.width/2
+    c.y = rect.corner.y + rect.height/2
+    rect.center = Point(c.x,c.y)
+    return(rect)
 
 def mov_rectangle():
-    
+    pass
+
+box = Rectangle(100,200)
+find_center(box)
+print(f"x of center= {box.center.x}, y of center= {box.center.y}")

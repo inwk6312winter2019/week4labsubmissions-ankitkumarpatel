@@ -15,5 +15,12 @@ class Point():
     def __str__(self):
         return print(f"{self.x},{self.y}")
 
+    def __add__(self, other):
+        return (self.x+other.x,self.y+other.y)
+
+
 
 center = Point(5,10)
+corner = Point(10,8)
+
+print(center.__add__(corner))

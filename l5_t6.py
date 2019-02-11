@@ -12,7 +12,7 @@ class Point():
         self.y = y
 
     def __str__(self):
-        return (f"{self.x},{self.y}")
+        return print(f"{self.x},{self.y}")
 
     def __add__(self, other):
         return (self.x+other.x,self.y+other.y)
@@ -27,6 +27,7 @@ class Point():
 center = Point(5,10)
 corner = Point(10,8)
 tup=(10,8)
-
+center.__str__()
+corner.__str__()
 print("sum of two point objects is:",center.add(corner))
 print("sum of point object and tuple is:",center.add(tup))
